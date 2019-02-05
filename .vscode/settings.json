@@ -1,0 +1,28 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+
+  "[vue]": {
+    "editor.formatOnSave": true
+  },
+
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.html": "prettyhtml",
+  "vetur.format.defaultFormatterOptions": {
+    "prettyhtml": {
+      "printWidth": 80, // No line exceeds 100 characters
+      "singleQuote": false, // Prefer double quotes over single quotes
+      "wrapAttributes": true
+    }
+  },
+  "vetur.grammar.customBlocks": {
+    "docs": "md",
+    "i18n": "json",
+    "page-query": "js",
+  },
+}
