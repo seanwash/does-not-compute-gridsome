@@ -1,13 +1,17 @@
 <template>
   <article>
     <header>
-      <time :datetime="episode.publishedAt">{{ episode.publishedAt }}</time>
+      <time :datetime="episode.publishedAt">{{ publishDateTime }}</time>
       <h1>{{ episode.title }}</h1>
     </header>
 
     <p>{{ episode.description }}</p>
 
-    <g-link class="btn" :to="permalink">View show notes</g-link>
+    <g-link
+      class="btn btn-grey inline-block"
+      :to="permalink"
+    >View show notes
+    </g-link>
   </article>
 </template>
 
@@ -21,6 +25,11 @@ export default {
   },
 
   computed: {
+    publishDateTime() {
+      let options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
+      return new Date(this.episode.publishedAt).toLocaleDateString('en-US', options)
+    },
+
     permalink() {
       return `/episodes/${this.episode.slug}`
     }
