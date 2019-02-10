@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "gridsome": "^0.4.0"
+    "gridsome": "^0.4.0",
+    "vue-markdown": "^2.2.4"
   },
   "devDependencies": {
     "dotenv": "^6.2.0",

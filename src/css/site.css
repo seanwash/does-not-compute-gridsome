@@ -67,7 +67,7 @@
 }
 
 .btn-grey {
-  @apply bg-grey text-black;
+  @apply bg-grey-light text-black;
 }
 
 .btn-blue {

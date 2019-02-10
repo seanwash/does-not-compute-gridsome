@@ -4,8 +4,9 @@
 import '~/css/site.css'
 
 import DefaultLayout from '~/layouts/Default.vue'
+import DefaultContainer from '~/components/Container.vue'
 
-export default function (Vue, {router, head, isClient}) {
-  // Set default layout as a global component
+export default function(Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
+  Vue.component('Container', DefaultContainer)
 }

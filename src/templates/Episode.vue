@@ -1,6 +1,12 @@
 <template>
   <Layout :title="$page.episode.title">
-    <div v-html="$page.episode.description"/>
+    <Breadcrumbs :links="breadcrumbLinks"/>
+
+    <Container class="py-6">
+      <h1 class="mb-4">{{ $page.episode.title }}</h1>
+
+      <vue-markdown>{{ $page.episode.longDescription }}</vue-markdown>
+    </Container>
   </Layout>
 </template>
 
@@ -8,23 +14,42 @@
 query Episode ($path: String!) {
   episode: episode (path: $path) {
     title
-    description
+    longDescription
   }
 }
 </page-query>
 
 <script>
-import Layout from '~/layouts/Default.vue'
+import Layout from '~/layouts/Default'
+import Breadcrumbs from '~/components/Breadcrumbs'
+import VueMarkdown from 'vue-markdown'
 
 export default {
   components: {
-    Layout
+    Layout,
+    Breadcrumbs,
+    VueMarkdown,
   },
 
-  metaInfo () {
+  metaInfo() {
     return {
-      title: this.$page.episode.title
+      title: this.$page.episode.title,
     }
-  }
+  },
+
+  computed: {
+    breadcrumbLinks() {
+      return [
+        {
+          name: 'Episodes',
+          path: '/episodes',
+        },
+        {
+          name: this.$page.episode.title,
+          path: this.$route.path,
+        },
+      ]
+    },
+  },
 }
 </script>
