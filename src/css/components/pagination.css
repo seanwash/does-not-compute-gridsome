@@ -1,0 +1,15 @@
+.pagination {}
+
+.pagination a {
+  @apply py-2 px-4 inline-block no-underline text-black border-solid border-grey-light border rounded;
+}
+
+.pagination a + a {
+  @apply ml-2;
+}
+
+.pagination a.active {
+  @apply bg-grey-light text-black;
+}
+
+.pagination a.active--exact {}

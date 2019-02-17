@@ -2,7 +2,9 @@
   <article>
     <header>
       <time :datetime="episode.publishedAt">{{ publishDateTime }}</time>
-      <h1>{{ episode.title }}</h1>
+      <h1 class="text-3xl my-2">
+        <g-link class="no-underline text-black" :to="permalink">{{ episode.title }}</g-link>
+      </h1>
     </header>
 
     <p>{{ episode.description }}</p>

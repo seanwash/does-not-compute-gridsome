@@ -15,6 +15,7 @@
     "dotenv": "^6.2.0",
     "gridsome-plugin-purgecss": "^1.0.9",
     "gridsome-plugin-tailwindcss": "^1.0.5",
+    "postcss-import": "^12.0.1",
     "tailwindcss": "^0.7.4"
   }
 }

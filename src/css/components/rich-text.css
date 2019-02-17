@@ -1,0 +1,11 @@
+.rich-text h2 {
+  @apply my-4;
+}
+
+.rich-text p {
+  @apply my-2;
+}
+
+.rich-text a {
+  @apply text-black;
+}

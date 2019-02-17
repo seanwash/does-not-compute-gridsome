@@ -1,0 +1,27 @@
+.btn {
+  @apply font-bold inline-block py-3 px-6 rounded no-underline;
+}
+
+.btn-grey {
+  @apply bg-grey-light text-black;
+}
+
+.btn-blue {
+  @apply bg-blue text-white;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}
+
+.btn-black {
+  @apply bg-black text-white;
+}
+
+.btn-facebook {
+  @apply bg-facebook text-white;
+}
+
+.btn-twitter {
+  @apply bg-twitter text-white;
+}

@@ -1,22 +1,40 @@
 <template>
-  <Layout :title="$page.episode.title">
+  <Layout>
     <Breadcrumbs :links="breadcrumbLinks"/>
 
-    <Container class="py-6">
-      <h1 class="mb-4">{{ $page.episode.title }}</h1>
+    <div class="py-6">
+      <h2>
+        Does Not Compute -
+        <time :datetime="$page.episode.publishedAt">{{ publishDateTime }}</time>
+      </h2>
 
-      <vue-markdown>{{ $page.episode.longDescription }}</vue-markdown>
-    </Container>
+      <h1 class="visually-hidden">{{ $page.episode.title }}</h1>
+
+      <div class="my-4">
+        <iframe
+          frameborder="0"
+          height="200px"
+          scrolling="no"
+          seamless
+          :src="embedUrl"
+          width="100%"
+        ></iframe>
+      </div>
+
+      <vue-markdown class="rich-text">{{ $page.episode.longDescription }}</vue-markdown>
+    </div>
   </Layout>
 </template>
 
 <page-query>
-query Episode ($path: String!) {
-  episode: episode (path: $path) {
-    title
-    longDescription
+  query Episode ($path: String!) {
+    episode: episode (path: $path) {
+      title
+      longDescription
+      sharingUrl
+      publishedAt
+    }
   }
-}
 </page-query>
 
 <script>
@@ -44,11 +62,30 @@ export default {
           name: 'Episodes',
           path: '/episodes',
         },
-        {
-          name: this.$page.episode.title,
-          path: this.$route.path,
-        },
       ]
+    },
+
+    publishDateTime() {
+      let options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }
+      return new Date(this.$page.episode.publishedAt).toLocaleDateString(
+        'en-US',
+        options,
+      )
+    },
+
+    embedUrl() {
+      // Simplecast doesn't expose the actual podcast ID anywhere that we can use directly for generating an embed link,
+      // so we have to extract that ID ourselves from the `sharingUrl` and manually build an embed URL.
+      let url = this.$page.episode.sharingUrl
+      let index = url.lastIndexOf('/')
+      let embedId = url.substr(index)
+
+      return `https://embed.simplecast.com/${embedId}?color=3d3d3d`
     },
   },
 }

@@ -14,20 +14,20 @@ const PODCAST_ID = process.env.PODCAST_ID
 const API_URL = process.env.API_URL
 const API_KEY = process.env.API_KEY
 
-module.exports = function (api) {
+module.exports = function(api) {
   api.loadSource(async store => {
     const { data } = await axios.get(`${API_URL}/podcasts/${PODCAST_ID}/episodes.json?api_key=${API_KEY}`)
 
     const contentType = store.addContentType({
       typeName: 'Episode',
-      route: '/episodes/:slug'
+      route: '/episodes/:slug',
     })
 
     for (const item of data) {
       contentType.addNode({
         id: item.id,
         title: item.title,
-        fields: {...item}
+        fields: { ...item },
       })
     }
   })
