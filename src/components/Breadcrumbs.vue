@@ -8,13 +8,11 @@
       </g-link>
 
       <template v-for="link in links">
-          <span
-            :key="link.path"
-            class="text-black"
-          >&nbsp;/&nbsp;</span>
+        <span
+          class="text-black"
+        >&nbsp;/&nbsp;</span>
 
         <g-link
-          :key="link.path"
           class="text-black"
           :to="link.path"
         >{{ link.name }}

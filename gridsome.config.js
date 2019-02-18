@@ -8,10 +8,18 @@ module.exports = {
   siteName: 'Does Not Compute',
   plugins: [
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'blog/**/*.md',
+        typeName: 'BlogPost',
+        route: '/blog/:year/:month/:day/:slug',
+      },
+    },
+    {
       use: 'gridsome-plugin-tailwindcss',
       options: {
-        config: './tailwind.js'
-      }
+        config: './tailwind.js',
+      },
     },
     {
       use: 'gridsome-plugin-purgecss',
@@ -22,10 +30,10 @@ module.exports = {
           './src/**/*.vue',
           './src/**/*.js',
           './src/**/*.jsx',
-          './src/**/*.md'
+          './src/**/*.md',
         ],
-        extensions: ['vue', 'js', 'jsx', 'md']
-      }
-    }
-  ]
+        extensions: ['vue', 'js', 'jsx', 'md'],
+      },
+    },
+  ],
 }

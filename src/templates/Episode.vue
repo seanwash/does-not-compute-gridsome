@@ -5,7 +5,7 @@
     <div class="py-6">
       <h2>
         Does Not Compute -
-        <time :datetime="$page.episode.publishedAt">{{ publishDateTime }}</time>
+        <time :datetime="$page.episode.publishedAt">{{ $page.episode.publishedAt | localeDate }}</time>
       </h2>
 
       <h1 class="visually-hidden">{{ $page.episode.title }}</h1>
@@ -63,19 +63,6 @@ export default {
           path: '/episodes',
         },
       ]
-    },
-
-    publishDateTime() {
-      let options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      }
-      return new Date(this.$page.episode.publishedAt).toLocaleDateString(
-        'en-US',
-        options,
-      )
     },
 
     embedUrl() {

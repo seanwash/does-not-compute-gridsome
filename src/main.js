@@ -3,10 +3,12 @@
 
 import '~/css/site.css'
 
+import Filters from '~/filters'
 import DefaultLayout from '~/layouts/Default.vue'
 import DefaultContainer from '~/components/Container.vue'
 
 export default function(Vue, { router, head, isClient }) {
+  Vue.use(Filters)
   Vue.component('Layout', DefaultLayout)
   Vue.component('Container', DefaultContainer)
 }

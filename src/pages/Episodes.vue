@@ -1,17 +1,16 @@
 <template>
   <Layout>
-    <Breadcrumbs :links="breadcrumbLinks"/>
+    <Breadcrumbs/>
 
-    <ul class="pl-0">
-      <li
+    <div>
+      <episode-summary
         v-for="({ node }, index) in $page.allEpisode.edges"
         :key="node.id"
+        :episode="node"
         :class="{ 'mt-4': index === 0 }"
         class="list-reset my-10"
-      >
-        <episode-summary :episode="node"/>
-      </li>
-    </ul>
+      />
+    </div>
 
     <div class="my-6">
       <Pager
@@ -59,12 +58,6 @@ export default {
     return {
       title: 'Episodes',
     }
-  },
-
-  computed: {
-    breadcrumbLinks() {
-      return []
-    },
   },
 }
 </script>
