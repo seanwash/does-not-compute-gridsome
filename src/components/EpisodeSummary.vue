@@ -4,7 +4,10 @@
       <time
         :datetime="episode.publishedAt"
       >{{ episode.publishedAt | localeDate }}</time>
-      <h1 class="text-3xl my-2">
+      <h1
+        class="text-3xl my-2"
+        :class="{ 'visually-hidden': showEmbed }"
+      >
         <g-link
           class="no-underline text-black"
           :to="episode.path"
