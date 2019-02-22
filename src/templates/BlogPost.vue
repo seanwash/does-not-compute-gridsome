@@ -8,7 +8,7 @@
 
       <vue-markdown class="rich-text">{{ $page.post.content }}</vue-markdown>
     </div>
-  </Layout>
+  </Layout><!---->
 </template>
 
 <page-query>
