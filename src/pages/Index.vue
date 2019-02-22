@@ -30,7 +30,7 @@ query Episode {
         title
         description
         publishedAt
-        slug
+        path
       }
     }
   }
