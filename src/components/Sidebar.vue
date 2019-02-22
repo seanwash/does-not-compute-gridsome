@@ -15,8 +15,14 @@
     </g-link>
 
     <div class="my-4">
-      <g-link class="block" to="/blog">Blog</g-link>
-      <g-link class="block" to="/episodes">Episodes</g-link>
+      <g-link
+        class="block"
+        to="/blog"
+      >Blog</g-link>
+      <g-link
+        class="block"
+        to="/episodes"
+      >Episodes</g-link>
     </div>
 
     <div>
@@ -45,29 +51,23 @@
           :key="host.name"
           class="list-reset"
         >
-          <a
-            class="block"
-            :href="host.link"
-            target="_blank"
-            rel="noopener"
+          <div
+            class="bg-black mt-4 mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden"
           >
-            <div class="flex">
-              <div>
-                <g-image
-                  :src="host.image"
-                  :alt="host.name"
-                  :title="host.name"
-                  :key="host.image"
-                  width="44"
-                  height="44"
-                />
-              </div>
-              <div>
-                <span class="block">{{ host.name }}</span>
-                <span class="block">{{ host.twitter }}</span>
+            <div class="sm:flex sm:items-center px-6 py-4">
+              <img
+                class="bg-white block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0"
+                :src="host.image"
+                :alt="host.name"
+              >
+              <div class="text-center sm:text-left sm:flex-grow">
+                <p class="text-xl text-white leading-tight">{{ host.name }}</p>
+                <p
+                  class="text-sm leading-tight text-grey-dark"
+                >{{ host.twitter }}</p>
               </div>
             </div>
-          </a>
+          </div>
         </li>
       </ul>
     </div>
@@ -92,11 +92,12 @@ export default {
 
 <style>
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
   /* https://tailwindcss.com/docs/colors/#app */
-  background: #FFFFFF;
+  background: #ffffff;
 }
 </style>

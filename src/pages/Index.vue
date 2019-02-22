@@ -4,8 +4,9 @@
 
     <ul class="pl-0">
       <li
-        class="list-reset my-6"
+        class="list-reset my-12"
         v-for="({ node }, index) in $page.episodes.edges"
+        :class="{ 'mt-0': index === 0 }"
         :key="node.id"
       >
         <episode-summary
