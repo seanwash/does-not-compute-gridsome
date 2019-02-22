@@ -5,20 +5,15 @@
     <div class="py-6">
       <h2>
         Does Not Compute -
-        <time :datetime="$page.episode.publishedAt">{{ $page.episode.publishedAt | localeDate }}</time>
+        <time
+          :datetime="$page.episode.publishedAt"
+        >{{ $page.episode.publishedAt | localeDate }}</time>
       </h2>
 
       <h1 class="visually-hidden">{{ $page.episode.title }}</h1>
 
       <div class="my-4">
-        <iframe
-          frameborder="0"
-          height="200px"
-          scrolling="no"
-          seamless
-          :src="embedUrl"
-          width="100%"
-        ></iframe>
+        <PlayerEmbed :episode="$page.episode"/>
       </div>
 
       <vue-markdown class="rich-text">{{ $page.episode.longDescription }}</vue-markdown>
@@ -40,6 +35,7 @@
 <script>
 import Layout from '~/layouts/Default'
 import Breadcrumbs from '~/components/Breadcrumbs'
+import PlayerEmbed from '~/components/PlayerEmbed'
 import VueMarkdown from 'vue-markdown'
 
 export default {
@@ -47,6 +43,7 @@ export default {
     Layout,
     Breadcrumbs,
     VueMarkdown,
+    PlayerEmbed,
   },
 
   metaInfo() {
@@ -63,16 +60,6 @@ export default {
           path: '/episodes',
         },
       ]
-    },
-
-    embedUrl() {
-      // Simplecast doesn't expose the actual podcast ID anywhere that we can use directly for generating an embed link,
-      // so we have to extract that ID ourselves from the `sharingUrl` and manually build an embed URL.
-      let url = this.$page.episode.sharingUrl
-      let index = url.lastIndexOf('/')
-      let embedId = url.substr(index)
-
-      return `https://embed.simplecast.com/${embedId}?color=3d3d3d`
     },
   },
 }

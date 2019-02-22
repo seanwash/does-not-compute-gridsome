@@ -12,6 +12,13 @@
       </h1>
     </header>
 
+    <div
+      v-if="showEmbed"
+      class="py-4"
+    >
+      <PlayerEmbed :episode="episode"/>
+    </div>
+
     <p>{{ episode.description }}</p>
 
     <g-link
@@ -22,12 +29,22 @@
 </template>
 
 <script>
+import PlayerEmbed from '~/components/PlayerEmbed'
+
 export default {
   props: {
     episode: {
       type: Object,
       required: true,
     },
+    showEmbed: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  components: {
+    PlayerEmbed,
   },
 }
 </script>

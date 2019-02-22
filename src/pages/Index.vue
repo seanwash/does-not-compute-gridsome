@@ -5,10 +5,13 @@
     <ul class="pl-0">
       <li
         class="list-reset my-6"
-        v-for="{ node } in $page.episodes.edges"
+        v-for="({ node }, index) in $page.episodes.edges"
         :key="node.id"
       >
-        <episode-summary :episode="node"/>
+        <episode-summary
+          :episode="node"
+          :show-embed="showEmbed(index)"
+        />
       </li>
     </ul>
 
@@ -31,6 +34,7 @@ query Episode {
         description
         publishedAt
         path
+        sharingUrl
       }
     }
   }
@@ -45,6 +49,12 @@ export default {
   components: {
     PodcastHeader,
     EpisodeSummary,
+  },
+
+  methods: {
+    showEmbed(index) {
+      return index === 0
+    },
   },
 }
 </script>
