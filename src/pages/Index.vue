@@ -9,10 +9,7 @@
         :class="{ 'mt-0': index === 0 }"
         :key="node.id"
       >
-        <episode-summary
-          :episode="node"
-          :show-embed="showEmbed(index)"
-        />
+        <episode-summary :episode="node"/>
       </li>
     </ul>
 
@@ -36,6 +33,7 @@ query Episode {
         publishedAt
         path
         sharingUrl
+        audioUrl
       }
     }
   }

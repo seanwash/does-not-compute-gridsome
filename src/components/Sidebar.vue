@@ -39,7 +39,7 @@
             :href="location.link"
             target="_blank"
             rel="noopener"
-            class="block flex items-center rounded bg-grey-light p-4 text-black no-underline"
+            class="block flex items-center rounded bg-grey-light p-4 text-black shadow no-underline"
           >
             <img
               :src="location.image"

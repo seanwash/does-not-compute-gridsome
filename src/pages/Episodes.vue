@@ -36,6 +36,7 @@
           description
           publishedAt
           slug
+          audioUrl
         }
       }
     }

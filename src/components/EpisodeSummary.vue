@@ -4,10 +4,7 @@
       <time
         :datetime="episode.publishedAt"
       >{{ episode.publishedAt | localeDate }}</time>
-      <h1
-        class="text-3xl my-2"
-        :class="{ 'visually-hidden': showEmbed }"
-      >
+      <h1 class="text-3xl leading-none my-2">
         <g-link
           class="no-underline text-black"
           :to="episode.path"
@@ -15,14 +12,9 @@
       </h1>
     </header>
 
-    <div
-      v-if="showEmbed"
-      class="py-4"
-    >
-      <PlayerEmbed :episode="episode"/>
-    </div>
-
     <p>{{ episode.description }}</p>
+
+    <PlyrAudio :audio-url="episode.audioUrl"/>
 
     <g-link
       class="btn btn-grey inline-block mt-4"
@@ -32,7 +24,7 @@
 </template>
 
 <script>
-import PlayerEmbed from '~/components/PlayerEmbed'
+import PlyrAudio from '~/components/PlyrAudio'
 
 export default {
   props: {
@@ -40,14 +32,10 @@ export default {
       type: Object,
       required: true,
     },
-    showEmbed: {
-      type: Boolean,
-      default: false,
-    },
   },
 
   components: {
-    PlayerEmbed,
+    PlyrAudio,
   },
 }
 </script>

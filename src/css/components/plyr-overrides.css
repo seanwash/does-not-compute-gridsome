@@ -1,0 +1,16 @@
+.plyr--audio .plyr__controls {
+  @apply bg-grey-light rounded shadow;
+}
+
+.plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+  @apply bg-black;
+}
+
+.plyr__control.plyr__tab-focus {
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.3);
+  outline: 0;
+}
+
+.plyr--full-ui input[type=range] {
+  @apply text-black;
+}

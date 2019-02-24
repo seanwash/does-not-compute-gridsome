@@ -36,6 +36,7 @@
  * @import "components/buttons";
  * @import "components/forms";
  */
+@import "components/plyr-overrides.css";
 @import "components/buttons.css";
 @import "components/rich-text.css";
 @import "components/pagination.css";
