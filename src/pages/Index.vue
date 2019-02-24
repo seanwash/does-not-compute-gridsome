@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <PodcastHeader/>
+    <PodcastHeader :heading="meta.heading"/>
 
     <ul class="pl-0">
       <li
@@ -48,6 +48,34 @@ export default {
   components: {
     PodcastHeader,
     EpisodeSummary,
+  },
+
+  data() {
+    return {
+      meta: {
+        heading:
+          'A weekly podcast about the lives and workflows of modern web app developers.',
+      },
+    }
+  },
+
+  metaInfo() {
+    return {
+      title: 'Home',
+      meta: [
+        {
+          key: 'og:title',
+          property: 'og:title',
+          content: 'Does Not Compute Podcast',
+        },
+        { key: 'description', name: 'description', content: this.meta.heading },
+        {
+          key: 'og:description',
+          property: 'og:description',
+          content: this.meta.heading,
+        },
+      ],
+    }
   },
 
   methods: {

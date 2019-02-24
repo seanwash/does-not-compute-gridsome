@@ -9,9 +9,56 @@ import Filters from '~/filters'
 import DefaultLayout from '~/layouts/Default.vue'
 import DefaultContainer from '~/components/Container.vue'
 
-export default function(Vue, { router, head, isClient }) {
+import GlobalMetaTags from '~/data/global-meta-tags'
+
+export default function(Vue, { router, head, isClient } = thing) {
+  // Plugins
   Vue.use(VuePlyr)
   Vue.use(Filters)
+
+  // Components
   Vue.component('Layout', DefaultLayout)
   Vue.component('Container', DefaultContainer)
+
+  // Global Meta
+  let descriptionObjectIndex = head.meta.findIndex(obj => {
+    return obj.key === 'description'
+  })
+
+  head.meta[descriptionObjectIndex] = {
+    key: 'description',
+    name: 'description',
+    content: GlobalMetaTags.description,
+  }
+
+  head.meta.push({
+    key: 'og:description',
+    property: 'og:description',
+    content: GlobalMetaTags.description,
+  })
+
+  head.meta.push({
+    key: 'og:site_name',
+    property: 'og:site_name',
+    content: 'Does Not Compute',
+  })
+
+  head.meta.push({
+    key: 'og:type',
+    property: 'og:type',
+    content: 'website',
+  })
+
+  head.meta.push({
+    key: 'og:image',
+    property: 'og:image',
+    content: 'website',
+  })
+
+  head.meta.push({
+    name: 'keywords',
+    content: GlobalMetaTags.keywords,
+  })
+
+  console.log('-----', head)
 }

@@ -3,9 +3,7 @@
     <div class="flex flex-col justify-center">
       <h1 class="text-black m-0 leading-none">Does Not Compute</h1>
 
-      <h2
-        class="mt-4 mb-6 text-black font-normal leading-tight"
-      >A weekly podcast about the lives and workflows of modern web app developers.</h2>
+      <h2 class="mt-4 mb-6 text-black font-normal leading-tight">{{ heading }}</h2>
 
       <ul class="flex pl-0">
         <li class="list-reset">
@@ -39,6 +37,12 @@
 
 <script>
 export default {
+  props: {
+    heading: {
+      type: String,
+      required: true,
+    },
+  },
   computed: {
     facebookUrl() {
       return 'https://www.facebook.com/sharer/sharer.php?u=https%3A//dnc.show'

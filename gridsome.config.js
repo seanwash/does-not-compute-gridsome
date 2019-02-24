@@ -4,8 +4,11 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+var GlobalMetaTags = require('./src/data/global-meta-tags.js')
+
 module.exports = {
-  siteName: 'Does Not Compute',
+  siteName: GlobalMetaTags.title,
+  siteDescription: GlobalMetaTags.description,
   plugins: [
     {
       use: '@gridsome/source-filesystem',

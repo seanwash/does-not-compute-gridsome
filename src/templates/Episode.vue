@@ -25,9 +25,11 @@
   query Episode ($path: String!) {
     episode: episode (path: $path) {
       title
+      description
       longDescription
       sharingUrl
       publishedAt
+      audioUrl
     }
   }
 </page-query>
@@ -49,6 +51,23 @@ export default {
   metaInfo() {
     return {
       title: this.$page.episode.title,
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: this.$page.episode.description,
+        },
+        {
+          key: 'og:description',
+          property: 'og:description',
+          content: this.$page.episode.description,
+        },
+        {
+          key: 'og:audio',
+          property: 'og:audio',
+          content: this.$page.episode.audioUrl,
+        },
+      ],
     }
   },
 

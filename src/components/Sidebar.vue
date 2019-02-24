@@ -32,14 +32,14 @@
         <li
           v-for="( location, index ) in podcastLocations"
           :key="location.name"
-          class="list-reset"
+          class="list-reset py-2"
           :class="{ 'mt-2': index !== 0 }"
         >
           <a
             :href="location.link"
             target="_blank"
             rel="noopener"
-            class="block flex items-center rounded bg-grey-light p-4 text-black shadow no-underline"
+            class="flex items-center text-black no-underline"
           >
             <img
               :src="location.image"
