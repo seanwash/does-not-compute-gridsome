@@ -5,7 +5,7 @@
 
       <h2
         class="mt-4 mb-6 text-black font-normal leading-tight"
-      >A weekly podcast about the lives and workflows of modern web developers</h2>
+      >A weekly podcast about the lives and workflows of modern web app developers.</h2>
 
       <ul class="flex pl-0">
         <li class="list-reset">

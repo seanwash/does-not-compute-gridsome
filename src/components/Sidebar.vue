@@ -7,7 +7,7 @@
       <g-image
         title="Does Not Compute"
         alt="Does Not Compute Show Art"
-        src="/does-not-compute.jpg"
+        src="/assets/does-not-compute.jpg"
         width="280"
         height="280"
         class="shadow"
@@ -25,19 +25,28 @@
       >Episodes</g-link>
     </div>
 
-    <div>
+    <div class="my-4">
       <span>Listen at</span>
 
-      <ul>
+      <ul class="pl-0 mt-4">
         <li
-          v-for="location in podcastLocations"
+          v-for="( location, index ) in podcastLocations"
           :key="location.name"
+          class="list-reset"
+          :class="{ 'mt-2': index !== 0 }"
         >
           <a
             :href="location.link"
             target="_blank"
             rel="noopener"
-          >{{ location.name }}</a>
+            class="block flex items-center rounded bg-grey-light p-4 text-black no-underline"
+          >
+            <img
+              :src="location.image"
+              class="mr-2"
+            >
+            {{ location.name }}
+          </a>
         </li>
       </ul>
     </div>
@@ -54,7 +63,10 @@
           <div
             class="bg-black mt-4 mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden"
           >
-            <div class="sm:flex sm:items-center px-6 py-4">
+            <a
+              :href="host.url"
+              class="sm:flex sm:items-center px-6 py-4 no-underline"
+            >
               <img
                 class="bg-white block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0"
                 :src="host.image"
@@ -66,7 +78,7 @@
                   class="text-sm leading-tight text-grey-dark"
                 >{{ host.twitter }}</p>
               </div>
-            </div>
+            </a>
           </div>
         </li>
       </ul>
