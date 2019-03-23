@@ -1,0 +1,10 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "Dev Server",
+      "focus": true,
+      "command": "npm run develop"
+    }
+  ]
+}
