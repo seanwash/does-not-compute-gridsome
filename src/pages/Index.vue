@@ -1,8 +1,10 @@
 <template>
   <Layout>
-    <PodcastHeader :heading="meta.heading"/>
+    <template slot="hero">
+      <PodcastHeader :heading="meta.heading"/>
+    </template>
 
-    <ul class="pl-0">
+    <ul class="pl-0 pt-12">
       <li
         class="list-reset my-12"
         v-for="({ node }, index) in $page.episodes.edges"
@@ -54,7 +56,7 @@ export default {
     return {
       meta: {
         heading:
-          'A weekly podcast about the lives and workflows of modern web app developers.',
+          'A weekly podcast about the lives and workflows of modern web app developers. New episodes every Tuesday.',
       },
     }
   },

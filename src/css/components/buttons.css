@@ -25,3 +25,13 @@
 .btn-twitter {
   @apply bg-twitter text-white;
 }
+
+.btn-adaptive-light {
+  @apply btn text-black;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-adaptive-dark {
+  @apply btn text-white;
+  background-color: rgba(0, 0, 0, 0.8);
+}

@@ -1198,7 +1198,7 @@ a.plyr__control::before {
   z-index: 2;
 }
 .plyr__preview-thumb__image-container {
-  background: #b7c5cd;
+  background: rgba(255, 255, 255, 0.55);
   border-radius: 2px;
   overflow: hidden;
   position: relative;
@@ -1222,7 +1222,7 @@ a.plyr__control::before {
   z-index: 3;
 }
 .plyr__preview-thumb__time-container span {
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(255, 255, 255, 0.55);
   border-radius: 2px;
   color: #fff;
   font-size: 14px;
@@ -1276,7 +1276,8 @@ a.plyr__control::before {
 /* --- Overrides */
 
 .plyr--audio .plyr__controls {
-  @apply bg-grey-light rounded shadow;
+  @apply rounded shadow text-white;
+  background: rgba(0, 0, 0, 0.8)
 }
 
 .plyr--audio .plyr__control.plyr__tab-focus,
@@ -1291,9 +1292,9 @@ a.plyr__control::before {
 }
 
 .plyr--audio .plyr__progress__buffer {
-  @apply text-black;
+  @apply text-white;
 }
 
 .plyr--full-ui input[type='range'] {
-  @apply text-black;
+  @apply text-white;
 }

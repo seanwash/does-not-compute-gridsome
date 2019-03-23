@@ -1,6 +1,6 @@
 export default [
   {
-    name: 'Apple Podcasts',
+    name: 'Podcasts',
     link: 'https://geo.itunes.apple.com/ca/podcast/feed/id1048731980',
     image: '/assets/icons/apple-podcasts.svg',
   },

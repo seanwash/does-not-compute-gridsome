@@ -33,6 +33,8 @@ import Breadcrumbs from '~/components/Breadcrumbs'
 import BlogPostSummary from '~/components/BlogPostSummary'
 
 export default {
+  layout: 'blog',
+
   components: {
     BlogPostSummary,
     Breadcrumbs,

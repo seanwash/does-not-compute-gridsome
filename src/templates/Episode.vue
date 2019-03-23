@@ -1,21 +1,10 @@
 <template>
   <Layout>
-    <Breadcrumbs :links="breadcrumbLinks"/>
+    <template slot="hero">
+      <EpisodeHero :episode="$page.episode"/>
+    </template>
 
     <div class="py-6">
-      <h2>
-        Does Not Compute -
-        <time
-          :datetime="$page.episode.publishedAt"
-        >{{ $page.episode.publishedAt | localeDate }}</time>
-      </h2>
-
-      <h1 class="visually-hidden">{{ $page.episode.title }}</h1>
-
-      <div class="my-4">
-        <PlayerEmbed :episode="$page.episode"/>
-      </div>
-
       <vue-markdown class="rich-text">{{ $page.episode.longDescription }}</vue-markdown>
     </div>
   </Layout>
@@ -38,6 +27,7 @@
 import Layout from '~/layouts/Default'
 import Breadcrumbs from '~/components/Breadcrumbs'
 import PlayerEmbed from '~/components/PlayerEmbed'
+import EpisodeHero from '~/components/EpisodeHero'
 import VueMarkdown from 'vue-markdown'
 
 export default {
@@ -46,6 +36,7 @@ export default {
     Breadcrumbs,
     VueMarkdown,
     PlayerEmbed,
+    EpisodeHero,
   },
 
   metaInfo() {

@@ -1,30 +1,5 @@
 <template>
   <div class="sidebar w-1/3 pr-4">
-    <g-link
-      to="/"
-      title="Home"
-    >
-      <g-image
-        title="Does Not Compute"
-        alt="Does Not Compute Show Art"
-        src="/assets/does-not-compute.jpg"
-        width="280"
-        height="280"
-        class="shadow"
-      />
-    </g-link>
-
-    <div class="my-4">
-      <g-link
-        class="block"
-        to="/blog"
-      >Blog</g-link>
-      <g-link
-        class="block"
-        to="/episodes"
-      >Episodes</g-link>
-    </div>
-
     <div class="my-4">
       <span>Listen at</span>
 

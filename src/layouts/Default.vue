@@ -1,11 +1,44 @@
 <template>
-  <Container class="flex pt-6">
-    <Sidebar/>
+  <div>
+    <header class="p-4 bg-black flex">
+      <a
+        class="inline-block no-underline text-white"
+        href="/"
+      >Does Not Compute</a>
 
-    <div class="main w-2/3 pl-4">
+      <nav class="ml-4 flex flex-grow justify-between">
+        <div>
+          <g-link
+            class="text-white inline-block"
+            to="/episodes"
+          >Episodes</g-link>
+          <g-link
+            class="text-white inline-block ml-2"
+            to="/blog"
+          >Blog</g-link>
+        </div>
+
+        <div>
+          <g-link
+            class="text-white inline-block ml-2"
+            to="/contact"
+          >Contact</g-link>
+          <g-link
+            class="text-white inline-block ml-2"
+            to="/sponsor"
+          >Sponsor</g-link>
+        </div>
+      </nav>
+    </header>
+
+    <slot name="hero"/>
+
+    <Container class="main">
       <slot/>
-    </div>
-  </Container>
+    </Container>
+
+    <slot name="post-content"/>
+  </div>
 </template>
 
 <static-query>
@@ -20,17 +53,18 @@
 import Sidebar from '~/components/Sidebar'
 
 export default {
-  components: { Sidebar }
+  components: { Sidebar },
 }
 </script>
 
 <style>
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
   /* https://tailwindcss.com/docs/colors/#app */
-  background: #FFFFFF;
+  background: #ffffff;
 }
 </style>

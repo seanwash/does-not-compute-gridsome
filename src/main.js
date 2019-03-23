@@ -59,6 +59,4 @@ export default function(Vue, { router, head, isClient } = thing) {
     name: 'keywords',
     content: GlobalMetaTags.keywords,
   })
-
-  console.log('-----', head)
 }
