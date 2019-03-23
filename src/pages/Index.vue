@@ -17,7 +17,7 @@
 
     <div class="my-6">
       <g-link
-        class="btn btn-grey inline-block"
+        class="btn btn-grey block w-full text-center"
         to="/episodes/2"
       >View More Episodes</g-link>
     </div>

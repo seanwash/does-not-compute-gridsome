@@ -5,7 +5,8 @@
         <time
           :datetime="episode.publishedAt"
         >{{ episode.publishedAt | localeDate }}</time>
-        <h1 class="text-5xl leading-none my-2">
+
+        <h1 class="text-3xl lg:text-5xl leading-tight my-2">
           <g-link
             class="no-underline text-black"
             :to="episode.path"
@@ -14,21 +15,21 @@
       </header>
 
       <p
-        class="text-2xl leading-tight mt-4 mb-6 max-w-lg"
+        class="text-xl lg:text-2xl leading-tight mt-4 mb-6 max-w-lg"
       >{{ episode.description }}</p>
 
       <div class="bg-white rounded shadow p-4">
         <PlyrAudio :audio-url="episode.audioUrl"/>
 
-        <div class="mt-4 flex items-center">
+        <div class="mt-4 flex flex-col md:flex-row items-center">
           <g-link
-            class="btn btn-adaptive-dark inline-block flex-grow text-center"
+            class="btn btn-adaptive-dark inline-block w-full md:w-auto flex-grow text-center"
             :to="episode.path"
           >View show notes</g-link>
 
-          <span class="inline-block mx-4">or</span>
+          <span class="hidden md:block mx-4">or</span>
 
-          <SocialButtonCollection/>
+          <SocialButtonCollection class="hidden md:block"/>
         </div>
       </div>
     </Container>
