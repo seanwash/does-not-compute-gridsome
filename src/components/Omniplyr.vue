@@ -12,7 +12,9 @@
       <button
         role="button"
         @click="stop"
-      >Close</button>
+      >
+        <x-circle-icon/>
+      </button>
     </div>
 
     <vue-plyr
@@ -31,8 +33,13 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import { XCircleIcon } from 'vue-feather-icons'
 
 export default {
+  components: {
+    XCircleIcon,
+  },
+
   watch: {
     episode: {
       deep: true,
