@@ -40,7 +40,9 @@
     <slot name="post-content"/>
 
     <footer class="py-12">
-      <Container class="flex justify-between items-center">
+      <Container
+        class="flex flex-col lg:flex-row text-center lg:text-left justify-between items-center"
+      >
         <p>
           &copy; {{ new Date().getFullYear() }} Does Not Compute. Produced by
           <a
@@ -49,7 +51,7 @@
           >SpecFm</a>.
         </p>
 
-        <div>
+        <div class="mt-6 lg:mt-0">
           <a
             class="text-black"
             href="https://github.com/seanwash/does-not-compute-gridsome"
@@ -59,7 +61,7 @@
           </a>
 
           <a
-            class="text-black ml-3"
+            class="text-black ml-6 lg:ml-3"
             href="https://twitter.com/dnccast"
           >
             <twitter-icon aria-hidden="true"/>
@@ -67,7 +69,7 @@
           </a>
 
           <a
-            class="text-black ml-3"
+            class="text-black ml-6 lg:ml-3"
             href="https://spectrum.chat/specfm"
           >
             <message-square-icon aria-hidden="true"/>

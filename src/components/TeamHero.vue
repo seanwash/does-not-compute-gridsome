@@ -7,21 +7,21 @@
         <li
           v-for="member in team"
           :key="member.name"
-          class="list-reset w-full lg:w-1/2 xl:w-1/4 p-2"
+          class="list-reset w-full md:w-1/2 xl:w-1/4 p-2"
         >
           <div
             class="bg-adaptive-dark mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden"
           >
             <a
               :href="member.url"
-              class="sm:flex sm:items-center px-6 py-4 no-underline"
+              class="lg:flex lg:items-center px-6 py-4 no-underline"
             >
               <img
-                class="bg-white block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0"
+                class="bg-white block h-16 sm:h-24 rounded-full mx-auto mb-4 lg:mb-0 lg:mr-4 lg:ml-0"
                 :src="member.image"
                 :alt="member.name"
               >
-              <div class="text-center sm:text-left sm:flex-grow">
+              <div class="text-center lg:text-left lg:flex-grow">
                 <p class="text-xl text-white leading-tight">{{ member.name }}</p>
                 <p class="text-sm leading-tight text-grey-dark">
                   <strong>{{ member.role}}</strong>
