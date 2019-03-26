@@ -7,6 +7,10 @@
     <div class="py-6">
       <vue-markdown class="rich-text">{{ $page.episode.longDescription }}</vue-markdown>
     </div>
+
+    <template slot="post-content">
+      <HostBar/>
+    </template>
   </Layout>
 </template>
 
@@ -29,6 +33,7 @@ import Breadcrumbs from '~/components/Breadcrumbs'
 import PlayerEmbed from '~/components/PlayerEmbed'
 import EpisodeHero from '~/components/EpisodeHero'
 import VueMarkdown from 'vue-markdown'
+import HostBar from '~/components/HostBar'
 
 export default {
   components: {
@@ -37,6 +42,7 @@ export default {
     VueMarkdown,
     PlayerEmbed,
     EpisodeHero,
+    HostBar,
   },
 
   metaInfo() {

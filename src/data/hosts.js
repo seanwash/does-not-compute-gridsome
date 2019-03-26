@@ -13,4 +13,11 @@ export default [
     twitter: '@Scrockwell',
     url: 'https://twitter.com/Scrockwell',
   },
+  {
+    name: 'Mikhail Delport',
+    link: 'https://twitter.com/_mikhailbot',
+    image: '/assets/editor-mikhail.jpg',
+    twitter: '@_mikhailbot',
+    url: 'https://twitter.com/_mikhailbot',
+  },
 ]
