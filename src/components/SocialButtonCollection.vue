@@ -5,30 +5,44 @@
         :href="facebookUrl"
         target="_blank"
         rel="noopener"
-        class="btn btn-facebook shadow"
-      >Facebook</a>
+        class="btn btn-facebook shadow flex items-center"
+      >
+        <facebook-icon class="mr-3"/>Facebook
+      </a>
     </li>
     <li class="list-reset ml-4 inline-block">
       <a
         :href="twitterUrl"
         target="_blank"
         rel="noopener"
-        class="btn btn-twitter shadow"
-      >Twitter</a>
+        class="btn btn-twitter shadow flex items-center"
+      >
+        <twitter-icon class="mr-3"/>Twitter
+      </a>
     </li>
     <li class="list-reset ml-4 inline-block">
       <a
         :href="emailUrl"
         target="_blank"
         rel="noopener"
-        class="btn btn-black shadow"
-      >Email</a>
+        class="btn btn-black shadow flex items-center"
+      >
+        <mail-icon class="mr-3"/>Email
+      </a>
     </li>
   </ul>
 </template>
 
 <script>
+import { FacebookIcon, TwitterIcon, MailIcon } from 'vue-feather-icons'
+
 export default {
+  components: {
+    FacebookIcon,
+    TwitterIcon,
+    MailIcon,
+  },
+
   computed: {
     facebookUrl() {
       return 'https://www.facebook.com/sharer/sharer.php?u=https%3A//dnc.show'
