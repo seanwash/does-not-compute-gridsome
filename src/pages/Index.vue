@@ -12,7 +12,7 @@
         <EpisodeSummary
           :key="node.id"
           :episode="node"
-          class="p-4 shadow rounded bg-grey-lightest"
+          class="p-4 rounded bg-grey-light"
         />
       </li>
     </ul>
