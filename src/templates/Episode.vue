@@ -1,7 +1,10 @@
 <template>
   <Layout>
     <template slot="hero">
-      <EpisodeHero :episode="$page.episode"/>
+      <EpisodeHero
+        :episode="$page.episode"
+        :is-permalink="true"
+      />
     </template>
 
     <div class="py-6">
