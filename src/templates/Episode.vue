@@ -9,7 +9,7 @@
     </div>
 
     <template slot="post-content">
-      <HostBar/>
+      <TeamHero/>
     </template>
   </Layout>
 </template>
@@ -33,7 +33,7 @@ import Breadcrumbs from '~/components/Breadcrumbs'
 import PlayerEmbed from '~/components/PlayerEmbed'
 import EpisodeHero from '~/components/EpisodeHero'
 import VueMarkdown from 'vue-markdown'
-import HostBar from '~/components/HostBar'
+import TeamHero from '~/components/TeamHero'
 
 export default {
   components: {
@@ -42,7 +42,7 @@ export default {
     VueMarkdown,
     PlayerEmbed,
     EpisodeHero,
-    HostBar,
+    TeamHero,
   },
 
   metaInfo() {

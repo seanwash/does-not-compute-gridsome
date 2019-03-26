@@ -19,10 +19,10 @@
         </div>
 
         <div>
-          <g-link
+          <a
             class="text-white inline-block ml-2"
-            to="/contact"
-          >Contact</g-link>
+            href="mailto:hello@seanwash.com"
+          >Contact</a>
           <a
             class="text-white inline-block ml-2"
             href="https://spec.fm/sponsors"
@@ -49,12 +49,31 @@
           >SpecFm</a>.
         </p>
 
-        <a
-          class="text-black"
-          href="https://twitter.com/dnccast"
-        >
-          <twitter-icon/>
-        </a>
+        <div>
+          <a
+            class="text-black"
+            href="https://github.com/seanwash/does-not-compute-gridsome"
+          >
+            <github-icon aria-hidden="true"/>
+            <span class="visually-hidden">GitHub</span>
+          </a>
+
+          <a
+            class="text-black ml-3"
+            href="https://twitter.com/dnccast"
+          >
+            <twitter-icon aria-hidden="true"/>
+            <span class="visually-hidden">Twitter</span>
+          </a>
+
+          <a
+            class="text-black ml-3"
+            href="https://spectrum.chat/specfm"
+          >
+            <message-square-icon aria-hidden="true"/>
+            <span class="visually-hidden">Spectrum.chat Community</span>
+          </a>
+        </div>
       </Container>
     </footer>
   </div>
@@ -69,11 +88,10 @@
 </static-query>
 
 <script>
-import Sidebar from '~/components/Sidebar'
-import { TwitterIcon } from 'vue-feather-icons'
+import { TwitterIcon, GithubIcon, MessageSquareIcon } from 'vue-feather-icons'
 
 export default {
-  components: { Sidebar, TwitterIcon },
+  components: { TwitterIcon, GithubIcon, MessageSquareIcon },
 }
 </script>
 

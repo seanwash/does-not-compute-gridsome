@@ -25,7 +25,7 @@
     </div>
 
     <template slot="post-content">
-      <HostBar/>
+      <TeamHero/>
     </template>
   </Layout>
 </template>
@@ -51,13 +51,13 @@ query Episode {
 <script>
 import PodcastHeader from '~/components/PodcastHeader'
 import EpisodeSummary from '~/components/EpisodeSummary'
-import HostBar from '~/components/HostBar'
+import TeamHero from '~/components/TeamHero'
 
 export default {
   components: {
     PodcastHeader,
     EpisodeSummary,
-    HostBar,
+    TeamHero,
   },
 
   data() {
