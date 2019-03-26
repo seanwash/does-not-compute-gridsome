@@ -38,6 +38,25 @@
     </Container>
 
     <slot name="post-content"/>
+
+    <footer class="py-12">
+      <Container class="flex justify-between items-center">
+        <p>
+          &copy; {{ new Date().getFullYear() }} Does Not Compute. Produced by
+          <a
+            class="text-black"
+            href="https://spec.fm"
+          >SpecFm</a>.
+        </p>
+
+        <a
+          class="text-black"
+          href="https://twitter.com/dnccast"
+        >
+          <twitter-icon/>
+        </a>
+      </Container>
+    </footer>
   </div>
 </template>
 
@@ -51,9 +70,10 @@
 
 <script>
 import Sidebar from '~/components/Sidebar'
+import { TwitterIcon } from 'vue-feather-icons'
 
 export default {
-  components: { Sidebar },
+  components: { Sidebar, TwitterIcon },
 }
 </script>
 
