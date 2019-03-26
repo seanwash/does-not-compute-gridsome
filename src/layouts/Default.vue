@@ -23,10 +23,10 @@
             class="text-white inline-block ml-2"
             to="/contact"
           >Contact</g-link>
-          <g-link
+          <a
             class="text-white inline-block ml-2"
-            to="/sponsor"
-          >Sponsor</g-link>
+            href="https://spec.fm/sponsors"
+          >Sponsor</a>
         </div>
       </nav>
     </header>
