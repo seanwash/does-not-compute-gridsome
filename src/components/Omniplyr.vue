@@ -1,19 +1,21 @@
 <template>
   <div
     v-show="episode.id"
-    class="omniplyer bg-white shadow rounded p-4"
+    class="omniplyer max-w-sm bg-white shadow rounded p-4"
   >
     <div class="flex justify-between">
       <g-link
-        class="text-black"
+        class="text-black no-underline block text-overflow-ellipsis"
         :to="episode.path"
       >{{ episode.title }}</g-link>
 
       <button
+        class="ml-1"
         role="button"
         @click="stop"
       >
-        <x-circle-icon/>
+        <span class="visually-hidden">Close Player</span>
+        <x-circle-icon aria-hidden="true"/>
       </button>
     </div>
 

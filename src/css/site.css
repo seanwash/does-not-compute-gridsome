@@ -90,3 +90,8 @@
 .bg-adaptive-dark {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+.text-overflow-ellipsis {
+  @apply overflow-hidden whitespace-no-wrap;
+  text-overflow: ellipsis;
+}
