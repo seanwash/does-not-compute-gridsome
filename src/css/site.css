@@ -82,3 +82,11 @@
 .text-6xl {
   font-size: 5rem;
 }
+
+.bg-adaptive-light {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bg-adaptive-dark {
+  background-color: rgba(0, 0, 0, 0.8);
+}

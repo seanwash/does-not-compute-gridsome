@@ -19,18 +19,20 @@ export default {
       type: String,
       required: true,
     },
-  },
-
-  data() {
-    return {
-      // https://github.com/sampotts/plyr/blob/master/controls.md
-      plyrOptions: {
-        controls: ['play', 'progress', 'current-time', 'duration', 'settings'],
+    // https://github.com/sampotts/plyr/blob/master/controls.md
+    plyrOptions: {
+      default: () => {
+        return {
+          controls: [
+            'play',
+            'progress',
+            'current-time',
+            'duration',
+            'settings',
+          ],
+        }
       },
-    }
+    },
   },
 }
 </script>
-
-<style>
-</style>
