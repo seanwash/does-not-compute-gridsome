@@ -11,7 +11,15 @@ import DefaultContainer from '~/components/Container.vue'
 
 import GlobalMetaTags from '~/data/global-meta-tags'
 
-export default function(Vue, { router, head, isClient } = thing) {
+/**
+ * @param Vue                 Vue instance
+ * @param context.appOptions  Options for the Vue instance
+ * @param context.router      The router instance
+ * @param context.head        VueMeta info object
+ * @param context.isClient
+ * @param context.isServer
+ */
+export default function(Vue, { head }) {
   // Plugins
   Vue.use(VuePlyr)
   Vue.use(Filters)
