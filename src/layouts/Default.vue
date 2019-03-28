@@ -6,7 +6,8 @@
         href="/"
       >Does Not Compute</a>
 
-      <nav class="ml-4 flex flex-grow justify-between">
+      <nav class="ml-4 flex flex-grow justify-end">
+        <!--
         <div>
           <g-link
             class="text-white inline-block"
@@ -17,14 +18,15 @@
             to="/blog"
           >Blog</g-link>
         </div>
+        -->
 
         <div>
           <a
-            class="text-white inline-block ml-2"
+            class="text-sm text-white no-underline inline-block"
             href="mailto:hello@seanwash.com"
           >Contact</a>
           <a
-            class="text-white inline-block ml-2"
+            class="text-sm text-white no-underline inline-block ml-3"
             href="https://spec.fm/sponsors"
           >Sponsor</a>
         </div>
