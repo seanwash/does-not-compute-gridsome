@@ -1,31 +1,31 @@
 <template>
-  <ul class="pl-0 inline-block">
-    <li class="list-reset inline-block">
+  <ul class="pl-0 w-full flex flex-wrap">
+    <li class="list-reset w-full md:w-1/3">
       <a
         :href="facebookUrl"
         target="_blank"
         rel="noopener"
-        class="btn btn-facebook shadow flex items-center"
+        class="btn btn-facebook shadow flex items-center justify-center"
       >
         <facebook-icon class="mr-3"/>Facebook
       </a>
     </li>
-    <li class="list-reset ml-4 inline-block">
+    <li class="list-reset w-full md:w-1/3 mt-2 md:mt-0 md:pl-2">
       <a
         :href="twitterUrl"
         target="_blank"
         rel="noopener"
-        class="btn btn-twitter shadow flex items-center"
+        class="btn btn-twitter shadow flex items-center justify-center"
       >
         <twitter-icon class="mr-3"/>Twitter
       </a>
     </li>
-    <li class="list-reset ml-4 inline-block">
+    <li class="list-reset w-full md:w-1/3 mt-2 md:mt-0 md:pl-2">
       <a
         :href="emailUrl"
         target="_blank"
         rel="noopener"
-        class="btn btn-black shadow flex items-center"
+        class="btn btn-black shadow flex items-center justify-center"
       >
         <mail-icon class="mr-3"/>Email
       </a>

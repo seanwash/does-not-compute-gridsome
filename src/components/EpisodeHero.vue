@@ -24,10 +24,10 @@
         <div class="mt-4 flex flex-col md:flex-row items-center">
           <g-link
             v-if="!isPermalink"
-            class="btn btn-adaptive-dark inline-block w-full md:w-auto flex justify-center items-center flex-grow text-center"
+            class="btn btn-adaptive-dark inline-block w-full md:w-auto flex justify-center items-center flex-grow text-center mb-2 md:mb-0"
             :to="episode.path"
           >
-            <file-text-icon class="mr-3"/>View show notes
+            <file-text-icon class="mr-3"/>View&nbsp;show&nbsp;notes
           </g-link>
 
           <span
@@ -35,7 +35,7 @@
             class="hidden md:block mx-4"
           >or</span>
 
-          <SocialButtonCollection class="hidden md:block"/>
+          <SocialButtonCollection/>
         </div>
       </div>
     </Container>
