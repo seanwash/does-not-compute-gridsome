@@ -9,6 +9,7 @@ var GlobalMetaTags = require('./src/data/global-meta-tags.js')
 module.exports = {
   siteName: GlobalMetaTags.title,
   siteDescription: GlobalMetaTags.description,
+  siteUrl: 'https://dnc.show',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -27,8 +28,21 @@ module.exports = {
     {
       use: '@gridsome/plugin-google-analytics',
       options: {
-        id: process.env.GA_ID
-      }
-    }
+        id: process.env.GA_ID,
+      },
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000, // default
+        exclude: ['/blog'],
+        config: {
+          '/episodes/*': {
+            changefreq: 'weekly',
+            priority: 0.5,
+          },
+        },
+      },
+    },
   ],
 }
