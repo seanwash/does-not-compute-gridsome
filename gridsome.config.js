@@ -24,5 +24,11 @@ module.exports = {
         config: './tailwind.js',
       },
     },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: process.env.GA_ID
+      }
+    }
   ],
 }
