@@ -1,5 +1,7 @@
 # Default starter for Gridsome
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1bef4329-48c7-40d0-b51e-756e32fb4f0c/deploy-status)](https://app.netlify.com/sites/does-not-compute/deploys)
+
 ## Getting Started
 
 ### Develop
