@@ -11,7 +11,7 @@ export default [
     role: 'Co-host',
     image: '/assets/host-rockwell.png',
     twitter: '@Schrockwell',
-    url: 'https://twitter.com/Scrockwell',
+    url: 'https://twitter.com/Schrockwell',
   },
   {
     name: 'Mikhail Delport',
