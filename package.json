@@ -10,7 +10,7 @@
     "@gridsome/plugin-google-analytics": "^0.1.0",
     "@gridsome/plugin-sitemap": "^0.1.1",
     "axios": "^0.18.0",
-    "gridsome": "^0.5.5",
+    "gridsome": "^0.6.3",
     "vue-feather-icons": "^4.10.0",
     "vue-markdown": "^2.2.4",
     "vue-plyr": "^5.1.0",
