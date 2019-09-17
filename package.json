@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@gridsome/plugin-sitemap": "^0.1.1",
+    "@gridsome/plugin-sitemap": "^0.2.2",
     "axios": "^0.18.0",
     "gridsome": "^0.5.5",
     "vue-feather-icons": "^4.10.0",
