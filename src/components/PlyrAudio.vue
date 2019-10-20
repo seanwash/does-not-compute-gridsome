@@ -5,7 +5,7 @@
   >
     <audio>
       <source
-        :src="audioUrl"
+        :src="audio_url"
         type="audio/mp3"
       >
     </audio>
@@ -15,7 +15,7 @@
 <script>
 export default {
   props: {
-    audioUrl: {
+    audio_url: {
       type: String,
       required: true,
     },

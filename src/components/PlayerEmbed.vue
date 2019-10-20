@@ -21,8 +21,8 @@ export default {
   computed: {
     embedUrl() {
       // Simplecast doesn't expose the actual podcast ID anywhere that we can use directly for generating an embed link,
-      // so we have to extract that ID ourselves from the `sharingUrl` and manually build an embed URL.
-      let url = this.episode.sharingUrl
+      // so we have to extract that ID ourselves from the `sharing_url` and manually build an embed URL.
+      let url = this.episode.sharing_url
       let index = url.lastIndexOf('/')
       let embedId = url.substr(index)
 

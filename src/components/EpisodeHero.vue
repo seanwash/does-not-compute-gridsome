@@ -3,8 +3,8 @@
     <Container>
       <header>
         <time
-          :datetime="episode.publishedAt"
-        >{{ episode.publishedAt | localeDate }}</time>
+          :datetime="episode.published_at"
+        >{{ episode.published_at | localeDate }}</time>
 
         <h1 class="text-3xl lg:text-5xl leading-tight my-2">
           <g-link
@@ -19,7 +19,7 @@
       >{{ episode.description }}</p>
 
       <div class="bg-white rounded shadow p-4">
-        <PlyrAudio :audio-url="episode.audioUrl"/>
+        <PlyrAudio :audio-url="episode.audio_url"/>
 
         <div class="mt-4 flex flex-col md:flex-row items-center">
           <g-link

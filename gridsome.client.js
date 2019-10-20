@@ -27,7 +27,7 @@ export default function(Vue, options, { appOptions }) {
   appOptions.store = new Vuex.Store({
     state: {
       episode: {
-        audioUrl: '',
+        audio_url: '',
       },
       playing: false,
     },

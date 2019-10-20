@@ -85,7 +85,7 @@
 
 <static-query>
   query Metadata {
-    metaData {
+    metadata {
       siteName
     }
   }

@@ -8,7 +8,7 @@
     </template>
 
     <div class="py-6">
-      <vue-markdown class="rich-text">{{ $page.episode.longDescription }}</vue-markdown>
+      <vue-markdown class="rich-text">{{ $page.episode.long_description }}</vue-markdown>
     </div>
 
     <template slot="post-content">
@@ -22,10 +22,10 @@
     episode: episode (path: $path) {
       title
       description
-      longDescription
-      sharingUrl
-      publishedAt
-      audioUrl
+      long_description
+      sharing_url
+      published_at
+      audio_url
     }
   }
 </page-query>
@@ -65,7 +65,7 @@ export default {
         {
           key: 'og:audio',
           property: 'og:audio',
-          content: this.$page.episode.audioUrl,
+          content: this.$page.episode.audio_url,
         },
       ],
     }

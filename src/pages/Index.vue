@@ -32,16 +32,16 @@
 
 <page-query>
 query Episode {
-  episodes: allEpisode(filter: { publishedAt: { lte: "now" }}, sortBy: "publishedAt", perPage: 12) {
+  episodes: allEpisode(filter: { published_at: { lte: "now" }}, sortBy: "published_at", perPage: 12) {
     edges {
       node {
         id
         title
         description
-        publishedAt
+        published_at
         path
-        sharingUrl
-        audioUrl
+        sharing_url
+        audio_url
       }
     }
   }

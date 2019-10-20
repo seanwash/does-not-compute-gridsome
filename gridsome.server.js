@@ -11,24 +11,21 @@ const PODCAST_ID = process.env.PODCAST_ID
 const API_URL = process.env.API_URL
 const API_KEY = process.env.API_KEY
 
-module.exports = function(api) {
-  api.loadSource(async store => {
+module.exports = function (api) {
+  api.loadSource(async actions => {
+    const collection = actions.addCollection('Episode')
+
     const { data } = await axios.get(
       `${API_URL}/podcasts/${PODCAST_ID}/episodes.json?api_key=${API_KEY}`
     )
 
-    const contentType = store.addContentType({
-      typeName: 'Episode',
-      route: '/episodes/:slug',
-    })
-
     for (const item of data) {
       let fields = { ...item, audio_url: replaceHttp(item.audio_url) }
 
-      contentType.addNode({
+      collection.addNode({
         id: item.id,
         title: item.title,
-        fields: fields,
+        ...fields
       })
     }
   })
@@ -43,7 +40,7 @@ module.exports = function(api) {
  * @returns {string}
  */
 function replaceHttp(urlString) {
-  const audioUrl = new URL(urlString)
-  audioUrl.protocol = 'https'
-  return audioUrl.href
+  const audio_url = new URL(urlString)
+  audio_url.protocol = 'https'
+  return audio_url.href
 }

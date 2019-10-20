@@ -4,19 +4,22 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-var GlobalMetaTags = require('./src/data/global-meta-tags.js')
+const GlobalMetaTags = require('./src/data/global-meta-tags.js')
 
 module.exports = {
   siteName: GlobalMetaTags.title,
   siteDescription: GlobalMetaTags.description,
   siteUrl: 'https://dnc.show',
+  templates: {
+    Episode: '/episodes/:title',
+    BlogPost: '/blog/:year/:month/:day/:title',
+  },
   plugins: [
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'blog/**/*.md',
         typeName: 'BlogPost',
-        route: '/blog/:year/:month/:day/:slug',
+        path: 'blog/**/*.md',
       },
     },
     {
