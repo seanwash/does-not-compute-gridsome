@@ -59,7 +59,7 @@ export default function(Vue, { head, appOptions }) {
   head.meta.push({
     key: 'og:image',
     property: 'og:image',
-    content: 'website',
+    content: process.env.GRIDSOME_ROOT_URL + '/assets/does-not-compute.jpg',
   })
 
   head.meta.push({
