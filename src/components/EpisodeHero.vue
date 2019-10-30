@@ -4,13 +4,15 @@
       <header>
         <time
           :datetime="episode.published_at"
-        >{{ episode.published_at | localeDate }}</time>
+        >{{ episode.published_at | localeDate }}
+        </time>
 
         <h1 class="text-3xl lg:text-5xl leading-tight my-2">
           <g-link
             class="no-underline text-black"
             :to="episode.path"
-          >{{ episode.title }}</g-link>
+          >{{ episode.title }}
+          </g-link>
         </h1>
       </header>
 
@@ -19,7 +21,9 @@
       >{{ episode.description }}</p>
 
       <div class="bg-white rounded shadow p-4">
-        <PlyrAudio :audio-url="episode.audio_url"/>
+        <client-only>
+          <PlyrAudio :audio-url="episode.audio_url"/>
+        </client-only>
 
         <div class="mt-4 flex flex-col md:flex-row items-center">
           <g-link
@@ -27,7 +31,8 @@
             class="btn btn-adaptive-dark inline-block w-full md:w-auto flex justify-center items-center flex-grow text-center mb-2 md:mb-0"
             :to="episode.path"
           >
-            <file-text-icon class="mr-3"/>View&nbsp;show&nbsp;notes
+            <file-text-icon class="mr-3"/>
+            View&nbsp;show&nbsp;notes
           </g-link>
 
           <span

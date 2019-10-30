@@ -1,15 +1,17 @@
 <template>
-  <vue-plyr
-    :options="plyrOptions"
-    class="mt-2"
-  >
-    <audio>
-      <source
-        :src="audioUrl"
-        type="audio/mp3"
-      >
-    </audio>
-  </vue-plyr>
+  <ClientOnly>
+    <vue-plyr
+      :options="plyrOptions"
+      class="mt-2"
+    >
+      <audio>
+        <source
+          :src="audioUrl"
+          type="audio/mp3"
+        >
+      </audio>
+    </vue-plyr>
+  </ClientOnly>
 </template>
 
 <script>
