@@ -5,9 +5,15 @@ fields:
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - type: datetime
   name: date
   label: date
+  config:
+    required: true
 - type: textarea
   name: excerpt
   label: excerpt
+  config:
+    required: true
