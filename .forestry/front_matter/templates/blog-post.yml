@@ -12,6 +12,10 @@ fields:
   label: date
   config:
     required: true
+- name: draft
+  type: boolean
+  label: Draft
+  default: true
 - type: textarea
   name: excerpt
   label: excerpt
