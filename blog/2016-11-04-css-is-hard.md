@@ -1,10 +1,17 @@
 ---
-title: CSS is hard — Thoughts on managing the cascade
+title: CSS is hard — Thoughts on managing the cascade asdf
 date: 2016-11-04
-excerpt: | 
-  For as long as I’ve been a web developer, the CSS Cascade has been a thorn in my side. I understand how it can be helpful, but the number of times that I’ve been frustrated by it far outweigh the the number of times that I’ve thought to myself “hey, this is pretty great”! Does this mean that we should throw it away? Some people certainly think so, and as much as I want to agree, I believe the sweet spot lies somewhere between Functional CSS (see also: Utility Classes) and Presentational based CSS selectors.
----
+excerpt: 'For as long as I’ve been a web developer, the CSS Cascade has been a thorn
+  in my side. I understand how it can be helpful, but the number of times that I’ve
+  been frustrated by it far outweigh the the number of times that I’ve thought to
+  myself “hey, this is pretty great”! Does this mean that we should throw it away?
+  Some people certainly think so, and as much as I want to agree, I believe the sweet
+  spot lies somewhere between Functional CSS (see also: Utility Classes) and Presentational
+  based CSS selectors.
 
+'
+
+---
 For as long as I’ve been a web developer, the CSS Cascade has been a thorn in my side. I understand how it can be helpful, but the number of times that I’ve been frustrated by it far outweigh the the number of times that I’ve thought to myself “hey, this is pretty great”! Does this mean that we should throw it away? [Some people certainly think so](http://www.jon.gold/2015/07/functional-css/), and as much as I want to agree, I believe the sweet spot lies somewhere between Functional CSS (see also: Utility Classes) and [Presentational based CSS selectors](https://seesparkbox.com/foundry).
 
 ## Cascade: The Trouble Areas
