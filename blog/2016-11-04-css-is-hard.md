@@ -1,6 +1,6 @@
 ---
-title: CSS is hard — Thoughts on managing the cascade
-date: 2016-11-04T07:00:00Z
+title: CSS is hard — Thoughts on managing the cascade asdf
+date: 2016-11-04T07:00:00.000+00:00
 excerpt: 'For as long as I’ve been a web developer, the CSS Cascade has been a thorn
   in my side. I understand how it can be helpful, but the number of times that I’ve
   been frustrated by it far outweigh the the number of times that I’ve thought to
