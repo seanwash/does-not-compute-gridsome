@@ -10,6 +10,8 @@ module.exports = {
   siteName: GlobalMetaTags.title,
   siteDescription: GlobalMetaTags.description,
   siteUrl: 'https://dnc.show',
+  host: '0.0.0.0',
+  port: 8080,
   templates: {
     Episode: '/episodes/:title',
     BlogPost: '/blog/:year/:month/:day/:title',
