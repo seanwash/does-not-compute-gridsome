@@ -32,7 +32,7 @@
       <div class="py-8 bg-black">
         <Container class="text-center">
           <h3 class="text-white text-3xl mb-4">New episodes every Tuesday.</h3>
-          <PodcastPlayerCollection variant="light"/>
+          <PodcastPlayerCollection variant="light" />
         </Container>
       </div>
     </template>
@@ -96,6 +96,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

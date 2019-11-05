@@ -1,7 +1,7 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
-import '~/css/site.css'
+import '~/assets/css/site.css'
 
 import Vuex from 'vuex'
 import Filters from '~/filters'

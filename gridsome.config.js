@@ -14,14 +14,16 @@ module.exports = {
   port: 8080,
   templates: {
     Episode: '/episodes/:title',
-    BlogPost: '/blog/:year/:month/:day/:title',
+    BlogPost: '/blog/:slug',
   },
   plugins: [
     {
-      use: '@gridsome/source-filesystem',
+      use: '@perlatsp/gridsome-source-devto',
       options: {
         typeName: 'BlogPost',
-        path: 'blog/**/*.md',
+        username: 'dnccast',
+        apiKey: process.env.DEVTO_API_KEY,
+        route: '/blog/:slug',
       },
     },
     {

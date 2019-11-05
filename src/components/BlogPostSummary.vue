@@ -1,18 +1,21 @@
 <template>
   <article>
     <header>
-      <time :datetime="post.date">{{ post.date | localeDate }}</time>
+      <time :datetime="post.date">{{ post.published_timestamp | localeDate }}</time>
       <h1 class="text-3xl my-2">
-        <g-link class="no-underline text-black" :to="post.path">{{ post.title }}</g-link>
+        <a
+          class="no-underline text-black"
+          :href="post.url"
+        >{{ post.title }}</a>
       </h1>
     </header>
 
-    <p>{{ post.excerpt }}</p>
+    <p>{{ post.description }}</p>
 
-    <g-link
+    <a
       class="btn btn-grey inline-block mt-4"
-      :to="post.path"
-    >Read more</g-link>
+      :href="post.url"
+    >Read at dev.to</a>
   </article>
 </template>
 
@@ -23,8 +26,8 @@ export default {
   props: {
     post: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
