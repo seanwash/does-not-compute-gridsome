@@ -23,6 +23,10 @@
         <div>
           <a
             class="text-sm text-white no-underline inline-block"
+            href="https://dev.to/dnccast"
+          >Blog</a>
+          <a
+            class="text-sm text-white no-underline inline-block ml-3"
             href="mailto:hello@seanwash.com"
           >Contact</a>
           <a
@@ -33,13 +37,13 @@
       </nav>
     </header>
 
-    <slot name="hero"/>
+    <slot name="hero" />
 
     <Container class="main">
-      <slot/>
+      <slot />
     </Container>
 
-    <slot name="post-content"/>
+    <slot name="post-content" />
 
     <footer class="py-12">
       <Container
@@ -58,7 +62,7 @@
             class="text-black"
             href="https://github.com/seanwash/does-not-compute-gridsome"
           >
-            <github-icon aria-hidden="true"/>
+            <github-icon aria-hidden="true" />
             <span class="visually-hidden">GitHub</span>
           </a>
 
@@ -66,7 +70,7 @@
             class="text-black ml-6 lg:ml-3"
             href="https://twitter.com/dnccast"
           >
-            <twitter-icon aria-hidden="true"/>
+            <twitter-icon aria-hidden="true" />
             <span class="visually-hidden">Twitter</span>
           </a>
 
@@ -74,7 +78,7 @@
             class="text-black ml-6 lg:ml-3"
             href="https://spectrum.chat/specfm"
           >
-            <message-square-icon aria-hidden="true"/>
+            <message-square-icon aria-hidden="true" />
             <span class="visually-hidden">Spectrum.chat Community</span>
           </a>
         </div>
