@@ -9,7 +9,7 @@ export default [
   {
     name: 'Rockwell Schrock',
     role: 'Co-host',
-    image: '/assets/host-rockwell.png',
+    image: '/assets/host-rockwell.jpg',
     twitter: '@Schrockwell',
     url: 'https://twitter.com/Schrockwell',
   },

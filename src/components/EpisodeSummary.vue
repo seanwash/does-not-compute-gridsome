@@ -2,8 +2,8 @@
   <article class="flex flex-col">
     <header>
       <time
-        :datetime="episode.publishedAt"
-      >{{ episode.publishedAt | localeDate }}</time>
+        :datetime="episode.published_at"
+      >{{ episode.published_at | localeDate }}</time>
       <h1 class="text-2xl leading-tight my-2">
         <g-link
           class="no-underline text-black"

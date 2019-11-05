@@ -14,8 +14,9 @@
       >
         <img
           :src="location.image"
+          :alt="location.name"
           class="mr-2"
-        >
+        />
         {{ location.name }}
       </a>
     </li>
@@ -49,6 +50,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

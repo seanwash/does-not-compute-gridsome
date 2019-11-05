@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <Breadcrumbs/>
+    <Breadcrumbs />
 
     <BlogPostSummary
       v-for="({ node }, index) in $page.posts.edges"
@@ -17,11 +17,14 @@
     posts: allBlogPost {
       edges {
         node {
+          id
+          url
           title
-          content
-          date
-          path
-          excerpt
+          published_timestamp
+          description
+          tag_list
+          canonical_url
+          social_image
         }
       }
     }
@@ -38,6 +41,12 @@ export default {
   components: {
     BlogPostSummary,
     Breadcrumbs,
+  },
+
+  metaInfo() {
+    return {
+      title: 'Blog Posts',
+    }
   },
 }
 </script>

@@ -4,19 +4,26 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-var GlobalMetaTags = require('./src/data/global-meta-tags.js')
+const GlobalMetaTags = require('./src/data/global-meta-tags.js')
 
 module.exports = {
   siteName: GlobalMetaTags.title,
   siteDescription: GlobalMetaTags.description,
   siteUrl: 'https://dnc.show',
+  host: '0.0.0.0',
+  port: 8080,
+  templates: {
+    Episode: '/episodes/:title',
+    BlogPost: '/blog/:slug',
+  },
   plugins: [
     {
-      use: '@gridsome/source-filesystem',
+      use: '@perlatsp/gridsome-source-devto',
       options: {
-        path: 'blog/**/*.md',
         typeName: 'BlogPost',
-        route: '/blog/:year/:month/:day/:slug',
+        username: 'dnccast',
+        apiKey: process.env.DEVTO_API_KEY,
+        route: '/blog/:slug',
       },
     },
     {

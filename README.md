@@ -13,3 +13,8 @@
 ### Deploy
 
 Hosted by [Netlify](https://netlify.com), deploys are kicked off by a new commit to the master branch.
+
+## Notes
+
+- Hosted on Netlify
+- DNS through Cloudflare

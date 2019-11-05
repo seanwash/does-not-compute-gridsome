@@ -15,7 +15,7 @@
         @click="stop"
       >
         <span class="visually-hidden">Close Player</span>
-        <x-circle-icon aria-hidden="true"/>
+        <x-circle-icon aria-hidden="true" />
       </button>
     </div>
 
@@ -25,15 +25,20 @@
     >
       <audio>
         <source
-          :src="episode.audioUrl"
+          :src="episode.audio_url"
           type="audio/mp3"
-        >
+        />
       </audio>
     </vue-plyr>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import VuePlyr from 'vue-plyr/dist/vue-plyr'
+
+Vue.use(VuePlyr)
+
 import { mapState, mapActions } from 'vuex'
 import { XCircleIcon } from 'vue-feather-icons'
 
@@ -48,7 +53,7 @@ export default {
       handler: function(val) {
         this.player.source = {
           type: 'audio',
-          sources: [{ src: this.episode.audioUrl, type: 'audio/mp3' }],
+          sources: [{ src: this.episode.audio_url, type: 'audio/mp3' }],
         }
       },
     },
@@ -71,8 +76,8 @@ export default {
     ...mapActions(['play', 'pause', 'selectEpisode']),
 
     assignPlyr(event) {
-      // Plyr emits a `ready` event each time `player.source` changes. Don't overwrite our already existing instance of
-      // Plyr.
+      // Plyr emits a `ready` event each time `player.source` changes. Don't
+      // overwrite our already existing instance of Plyr.
       if (this.player === null) {
         // Cache our Plyr instance and subscribe to relevant Plyr events.
         // https://github.com/sampotts/plyr#events
@@ -108,4 +113,3 @@ export default {
   z-index: 1000;
 }
 </style>
-

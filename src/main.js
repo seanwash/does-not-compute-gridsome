@@ -1,14 +1,12 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
-import '~/css/site.css'
+import '~/assets/css/site.css'
 
-import VuePlyr from 'vue-plyr'
-
+import Vuex from 'vuex'
 import Filters from '~/filters'
 import DefaultLayout from '~/layouts/Default.vue'
 import DefaultContainer from '~/components/Container.vue'
-
 import GlobalMetaTags from '~/data/global-meta-tags'
 
 /**
@@ -19,16 +17,17 @@ import GlobalMetaTags from '~/data/global-meta-tags'
  * @param context.isClient
  * @param context.isServer
  */
-export default function(Vue, { head }) {
-  // Plugins
-  Vue.use(VuePlyr)
+export default function(Vue, { head, appOptions }) {
   Vue.use(Filters)
 
   // Components
   Vue.component('Layout', DefaultLayout)
   Vue.component('Container', DefaultContainer)
 
-  // Global Meta
+  // ========================================================
+  // = Global Head/Meta
+  // ========================================================
+
   let descriptionObjectIndex = head.meta.findIndex(obj => {
     return obj.key === 'description'
   })
@@ -60,11 +59,46 @@ export default function(Vue, { head }) {
   head.meta.push({
     key: 'og:image',
     property: 'og:image',
-    content: 'website',
+    content: process.env.GRIDSOME_ROOT_URL + '/assets/does-not-compute.jpg',
   })
 
   head.meta.push({
     name: 'keywords',
     content: GlobalMetaTags.keywords,
+  })
+
+  // ========================================================
+  // = Vuex Store
+  // ========================================================
+
+  Vue.use(Vuex)
+
+  appOptions.store = new Vuex.Store({
+    state: {
+      episode: {
+        audio_url: '',
+      },
+      playing: false,
+    },
+    mutations: {
+      setEpisode(state, episode) {
+        state.episode = episode
+      },
+      setPlaying(state, value) {
+        state.playing = value
+      },
+    },
+    actions: {
+      play({ commit }) {
+        commit('setPlaying', true)
+      },
+      pause({ commit }) {
+        commit('setPlaying', false)
+      },
+      selectEpisode({ commit, dispatch }, episode) {
+        commit('setEpisode', episode)
+        dispatch('play')
+      },
+    },
   })
 }

@@ -32,7 +32,7 @@
       <div class="py-8 bg-black">
         <Container class="text-center">
           <h3 class="text-white text-3xl mb-4">New episodes every Tuesday.</h3>
-          <PodcastPlayerCollection variant="light"/>
+          <PodcastPlayerCollection variant="light" />
         </Container>
       </div>
     </template>
@@ -41,21 +41,20 @@
 
 <page-query>
   query Episodes ($page: Int) {
-    latestEpisode: allEpisode(perPage: 1, page: 1, sortBy: "publishedAt") {
+    latestEpisode: allEpisode(perPage: 1, page: 1, sortBy: "published_at") {
       edges {
         node {
           id
           title
           path
           description
-          publishedAt
-          slug
-          audioUrl
+          published_at
+          audio_url
         }
       }
     }
 
-    episodes: allEpisode(skip: 1, perPage: 12, page: $page, sortBy: "publishedAt") @paginate {
+    episodes: allEpisode(skip: 1, perPage: 12, page: $page, sortBy: "published_at") @paginate {
       pageInfo {
         totalPages
         currentPage
@@ -66,9 +65,8 @@
           title
           path
           description
-          publishedAt
-          slug
-          audioUrl
+          published_at
+          audio_url
         }
       }
     }
@@ -98,6 +96,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

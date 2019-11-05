@@ -11,23 +11,36 @@ const PODCAST_ID = process.env.PODCAST_ID
 const API_URL = process.env.API_URL
 const API_KEY = process.env.API_KEY
 
-module.exports = function(api) {
-  api.loadSource(async store => {
+module.exports = function (api) {
+  api.loadSource(async actions => {
+    const collection = actions.addCollection('Episode')
+
     const { data } = await axios.get(
       `${API_URL}/podcasts/${PODCAST_ID}/episodes.json?api_key=${API_KEY}`
     )
 
-    const contentType = store.addContentType({
-      typeName: 'Episode',
-      route: '/episodes/:slug',
-    })
-
     for (const item of data) {
-      contentType.addNode({
+      let fields = { ...item, audio_url: replaceHttp(item.audio_url) }
+
+      collection.addNode({
         id: item.id,
         title: item.title,
-        fields: { ...item },
+        ...fields
       })
     }
   })
+}
+
+/**
+ * Simplecast's API gives us `audio_url`s with an http protocol, which sets off
+ * Netlify's mixed content warning policy. This is a utility function for changing
+ * a URL instance's protocol from http to https.
+ *
+ * @param urlString
+ * @returns {string}
+ */
+function replaceHttp(urlString) {
+  const audio_url = new URL(urlString)
+  audio_url.protocol = 'https'
+  return audio_url.href
 }
