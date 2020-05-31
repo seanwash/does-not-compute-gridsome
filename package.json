@@ -14,6 +14,7 @@
     "@perlatsp/gridsome-source-devto": "0.0.1",
     "axios": "^0.18.0",
     "gridsome": "^0.7.8",
+    "gridsome-plugin-fathom": "0.0.16",
     "vue-feather-icons": "^4.10.0",
     "vue-markdown": "^2.2.4",
     "vue-plyr": "^5.1.3",

@@ -33,10 +33,13 @@ module.exports = {
       },
     },
     {
-      use: '@gridsome/plugin-google-analytics',
+      use: 'gridsome-plugin-fathom',
       options: {
-        id: process.env.GA_ID,
-      },
+        siteId: process.env.FATHOM_ID,
+        trackerUrl: process.env.FATHOM_TRACKER_URL,
+        host: process.env.FATHOM_HOST,
+        debug: true
+      }
     },
     {
       use: '@gridsome/plugin-sitemap',
