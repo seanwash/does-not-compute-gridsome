@@ -76,7 +76,7 @@ export default function(Vue, { head, appOptions }) {
   appOptions.store = new Vuex.Store({
     state: {
       episode: {
-        audio_url: '',
+        enclosure_url: '',
       },
       playing: false,
     },

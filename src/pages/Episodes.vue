@@ -49,7 +49,7 @@
           path
           description
           published_at
-          audio_url
+          enclosure_url
         }
       }
     }
@@ -66,7 +66,7 @@
           path
           description
           published_at
-          audio_url
+          enclosure_url
         }
       }
     }

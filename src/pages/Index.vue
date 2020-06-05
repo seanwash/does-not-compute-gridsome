@@ -40,8 +40,7 @@ query Episode {
         description
         published_at
         path
-        sharing_url
-        audio_url
+        enclosure_url
       }
     }
   }

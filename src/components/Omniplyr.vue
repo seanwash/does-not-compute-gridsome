@@ -25,7 +25,7 @@
     >
       <audio>
         <source
-          :src="episode.audio_url"
+          :src="episode.enclosure_url"
           type="audio/mp3"
         />
       </audio>
@@ -53,7 +53,7 @@ export default {
       handler: function(val) {
         this.player.source = {
           type: 'audio',
-          sources: [{ src: this.episode.audio_url, type: 'audio/mp3' }],
+          sources: [{ src: this.episode.enclosure_url, type: 'audio/mp3' }],
         }
       },
     },

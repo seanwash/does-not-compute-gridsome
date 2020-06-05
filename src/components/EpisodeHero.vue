@@ -22,7 +22,7 @@
 
       <div class="bg-white rounded shadow p-4">
         <client-only>
-          <PlyrAudio :audio-url="episode.audio_url"/>
+          <PlyrAudio :audio-url="episode.enclosure_url"/>
         </client-only>
 
         <div class="mt-4 flex flex-col md:flex-row items-center">

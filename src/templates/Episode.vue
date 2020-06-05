@@ -23,9 +23,8 @@
       title
       description
       long_description
-      sharing_url
       published_at
-      audio_url
+      enclosure_url
     }
   }
 </page-query>
@@ -33,7 +32,6 @@
 <script>
 import Layout from '~/layouts/Default'
 import Breadcrumbs from '~/components/Breadcrumbs'
-import PlayerEmbed from '~/components/PlayerEmbed'
 import EpisodeHero from '~/components/EpisodeHero'
 import VueMarkdown from 'vue-markdown'
 import TeamHero from '~/components/TeamHero'
@@ -43,7 +41,6 @@ export default {
     Layout,
     Breadcrumbs,
     VueMarkdown,
-    PlayerEmbed,
     EpisodeHero,
     TeamHero,
   },
@@ -65,7 +62,7 @@ export default {
         {
           key: 'og:audio',
           property: 'og:audio',
-          content: this.$page.episode.audio_url,
+          content: this.$page.episode.enclosure_url,
         },
       ],
     }
