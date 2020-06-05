@@ -13,7 +13,7 @@
     "@gridsome/plugin-sitemap": "^0.1.1",
     "@perlatsp/gridsome-source-devto": "0.0.1",
     "axios": "^0.18.0",
-    "gridsome": "^0.7.8",
+    "gridsome": "^0.7.16",
     "gridsome-plugin-fathom": "0.0.16",
     "vue-feather-icons": "^4.10.0",
     "vue-markdown": "^2.2.4",
