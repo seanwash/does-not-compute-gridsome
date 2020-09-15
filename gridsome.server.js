@@ -30,7 +30,7 @@ module.exports = function(api) {
 
     for (const id of episodeIds) {
       // https://stackoverflow.com/a/51200702/1549130
-      await new Promise(resolve => setTimeout(resolve, 200))
+      await new Promise(resolve => setTimeout(resolve, 400))
 
       const { data } = await axios.get(`${API_URL}/episodes/${id}`, {
         headers: {
