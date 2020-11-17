@@ -5,6 +5,8 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+require('dotenv').config()
+
 const axios = require('axios')
 
 const PODCAST_ID = process.env.API_20_PODCAST_ID
