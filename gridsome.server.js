@@ -19,7 +19,7 @@ module.exports = function(api) {
 
     console.log('----- Fetching Simplecast Episodes')
     const { data } = await axios.get(
-      `${API_URL}/podcasts/${PODCAST_ID}/episodes?limit=1000&offset=0`,
+      `${API_URL}/podcasts/${PODCAST_ID}/episodes?limit=150&offset=0`,
       {
         headers: {
           Authorization: `Bearer ${API_KEY}`,
